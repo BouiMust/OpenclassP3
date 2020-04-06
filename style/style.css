@@ -6,13 +6,13 @@
 
 
 body {
-    max-width: 1500px;
+    max-width: 1500px;     /*dimension maquette*/
     margin: auto;
     background: #EEE;
     box-shadow: 0px 0px 30px 10px #CCC;
 }
 
-.yellow {
+.yellow {                   /*tous les textes*/
     color: #fdcb46;
     text-align: center;
 }
@@ -25,33 +25,52 @@ body {
     background: #FFF;
 }
 
-/******** Border Background Flex ********/
-
-body * {border: 1px silver solid;}
-
-
 
 
 /******** Header ************************/
 header {
-    height: 245px;
+    height: 245px;   /*dimension maquette*/
+    display: flex;
 }
 
 header h1 {
-    font-size: 3em;
+    font-size: 4em;
+    margin: auto;       /*titre centré*/
 }
 
 
 /******** Main **************************/
-main {
-    height: 2005px;
+
+.article_block {
+    height: 1805px;      /*dimension maquette*/
+    display: flex;
+    flex-wrap: wrap;     /*retour à la ligne auto*/
+    justify-content: space-evenly;
+    align-items: center;
+    padding-left: 60px;  /*ajustement centré des menus*/
+    padding-right: 60px;
 }
 
+img
+{
+    width: 536px;       /*taille des menus*/
+    box-shadow: 0px 0px 20px 5px #CCC;
+}
+
+a, img {
+    border: 1px solid red;
+
+}
+
+.p_block {
+    height: 200px;      /*dimension maquette*/
+    background-color: violet;
+}
 
 
 /******** Footer ************************/
 footer {
-    height: 138px;
+    height: 138px;      /*dimension maquette*/
 
 }
 
