@@ -1,11 +1,60 @@
-/*1 - Définition des polices personnalisées*/
-
-/*2 - on indique les styles globaux de la page par défaut*/
+/******** polices personnalisées ********/
 
 
-/*2 - utiliser des bordures/background pour chaque "boite" + Flexbox*/
-/*3 - le Header*/
-/*4 - les liens Nav*/
-/*6 - le Corps*/
-/*7 - le Footer*/
+
+/******** Styles globaux ****************/
+
+
+body {
+    max-width: 1500px;
+    margin: auto;
+    background: #EEE;
+    box-shadow: 0px 0px 30px 10px #CCC;
+}
+
+.yellow {
+    color: #fdcb46;
+    text-align: center;
+}
+
+.green {
+    background: #579c87;
+}
+
+.white {
+    background: #FFF;
+}
+
+/******** Border Background Flex ********/
+
+body * {border: 1px silver solid;}
+
+
+
+
+/******** Header ************************/
+header {
+    height: 245px;
+}
+
+header h1 {
+    font-size: 3em;
+}
+
+
+/******** Main **************************/
+main {
+    height: 2005px;
+}
+
+
+
+/******** Footer ************************/
+footer {
+    height: 138px;
+
+}
+
+
+
 /*8 - les Media Queries /**/
