@@ -6,8 +6,8 @@
 
 
 body {
-    max-width: 1500px;     /*dimension maquette*/
-    margin: auto;
+    max-width: 1024px;     /*dimension choisie*/
+    margin: auto;           /*centre le body*/
     background: #EEE;
     box-shadow: 0px 0px 30px 10px #CCC;
 }
@@ -15,6 +15,7 @@ body {
 .yellow {                   /*tous les textes*/
     color: #fdcb46;
     text-align: center;
+    font-family: Verdana, serif, sans-serif;
 }
 
 .green {
@@ -29,51 +30,81 @@ body {
 
 /******** Header ************************/
 header {
-    height: 245px;   /*dimension maquette*/
+    height: 165px;
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-header h1 {
+header  h1 {
     font-size: 4em;
-    margin: auto;       /*titre centré*/
 }
+
 
 
 /******** Main **************************/
 
-.article_block {
-    height: 1805px;      /*dimension maquette*/
+main  .a_block {
+    height: 1231px;      /*dimension maquette*/
     display: flex;
     flex-wrap: wrap;     /*retour à la ligne auto*/
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     padding-left: 60px;  /*ajustement centré des menus*/
     padding-right: 60px;
+    padding-bottom: 92px;
+    padding-top: 98px;
+}
+main  .a_block  a {
+    width: 365px;
+    min-width: 200px;
+    display: flex;      /*a englobe img */
+    outline: 0;         /*retire déco séléction(Tab)*/
+    box-shadow: 0px 0px 20px 10px #CCC;
+}
+main  .a_block  a  img {
 }
 
-img
-{
-    width: 536px;       /*taille des menus*/
-    box-shadow: 0px 0px 20px 5px #CCC;
+
+main  .p_block {
+    height: 139px;     
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+main  .p_block  p {
+    width: 447px;
+    line-height: 81px;     /*height + texte centré*/
+    border-radius: 20px;
+    font-size: 45px;
+    margin: 0;              /*retire les marges*/
 }
 
-a, img {
-    border: 1px solid red;
-
-}
-
-.p_block {
-    height: 200px;      /*dimension maquette*/
-    background-color: violet;
-}
 
 
 /******** Footer ************************/
+
 footer {
+    height: 138px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+footer  div {
     height: 138px;      /*dimension maquette*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 50px;
 
 }
-
+footer  div  p:nth-child(1) {
+    padding-left: 2%;
+}
+footer  div  p:nth-child(2) {
+    padding-right: 2%;
+}
 
 
 /*8 - les Media Queries /**/
