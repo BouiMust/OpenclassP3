@@ -45,15 +45,16 @@ header  h1 {
 /******** Main **************************/
 
 main  .a_block {
-    height: 1231px;      /*dimension maquette*/
+    height: 1231px;
     display: flex;
     flex-wrap: wrap;     /*retour à la ligne auto*/
-    justify-content: space-around;
+    justify-content: space-between;
+    justify-items: center;
     align-items: center;
-    padding-left: 60px;  /*ajustement centré des menus*/
-    padding-right: 60px;
-    padding-bottom: 92px;
-    padding-top: 98px;
+    padding-left: 111px; 
+    padding-right: 111px;
+    padding-top: 68px;
+    padding-bottom: 64px;
 }
 main  .a_block  a {
     width: 365px;
@@ -81,29 +82,35 @@ main  .p_block  p {
 }
 
 
-
 /******** Footer ************************/
 
 footer {
-    height: 138px;
+    border: 3px black solid;
+    height: 95px;
     width: 100%;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    /*transform: scale(1);*/
 }
 footer  div {
-    height: 138px;      /*dimension maquette*/
+    border: 3px red solid;
+    height: 95px;
+    position: fixed;
+    bottom: 0;
+    /*right: 0;
+    left: 0;*/
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 50px;
-
+    font-size: 35px;
 }
 footer  div  p:nth-child(1) {
+    border: 3px orange solid;
     padding-left: 2%;
+    margin: 0;
 }
 footer  div  p:nth-child(2) {
+    border: 3px orange solid;
     padding-right: 2%;
+    margin: 0;
 }
 
 
