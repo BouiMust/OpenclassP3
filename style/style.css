@@ -46,34 +46,46 @@ header  h1 {
 
 /******** MAIN **************************/
 
-main  .padding_block {
-    /*border: 5px green solid; /**/
-    padding: 7% 12% 7% 12%;
+main .padding_block {
+    border: 10px green solid; /**/
+    padding: 7% 10% 7% 10%;
 }
-main  .a_block {
-    border: 8px solid red; /**/
-    height: 1098px;
-    display: flex;
-    flex-direction: row;  /*def*/
-    flex-wrap: wrap;      /*retour à la ligne auto*/
-    justify-content: space-between; /*séparation horiz*/
-    align-content: space-between;   /*séparation verti*/
 
+main .a_block {
+    border: 10px solid red; /**/
+    display: flex;
+    flex-wrap: wrap;
 }
+
+main .a_block_1 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+main .a_block_separation {
+    height: 50px;
+}
+
+main .a_block_2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+
 main  .a_block  a {
-    border: 2px solid blue; /**/
+    border: 5px solid blue; /**/
     display: flex;      /*a englobe img */
     outline: 0;         /*retire déco séléction(Tab)*/
     box-shadow: 0px 0px 20px 10px #CCC;
-    width: 47%;         /**/
-    /*width: 40%;       /**/
-    /* height: 200px;   /**/
+    width: 45%;         /* image étirable sans deformer*/
 }
 main  .a_block  a  img {
-    /*flex: 1;
     /*border: 2px solid green; /**/
-    width: 100%; /**/
-    /*height: auto; /**/
+    width: 100%;        /*100% de a*/
 }
 
 
@@ -124,27 +136,30 @@ footer  div  p:nth-child(2) {
 
 
 
-/******** Media Queries *******************/
+/******** MEDIA QUERIES *******************/
 
 @media screen and (max-width: 1040px)
 {
+    footer  div {
 
-
-
-
+        height: 95px;
+        position: fixed;
+        width: 100%; /*changé*/
+        bottom: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 35px;
+    }
     
 }
 
 @media screen and (max-width: 900px)
 {
 
-    h1 {
-
+    main  .padding_block {
+        /*padding: 0;*/
     }
-
-main  .padding_block {
-    /*border: 5px green solid; /**/
-    /*padding: 5% 8% 5% 8%; /**/
 }
 main  .a_block {
     /*border: 8px solid red; /**/
