@@ -6,7 +6,7 @@
 
 
 body {
-    max-width: 1024px;     /*dimension choisie*/
+    max-width: 1024px;     /*dimension choisie, réductible*/
     margin: auto;           /*centre le body*/
     background: #EEE;
     box-shadow: 0px 0px 30px 10px #CCC;
@@ -28,44 +28,59 @@ body {
 
 
 
-/******** Header ************************/
+/******** HEADER ************************/
 header {
     height: 165px;
     display: flex;
+    flex-direction: row;    /*def*/
+    flex-wrap: nowrap;      /*def*/
     justify-content: center;
     align-items: center;
 }
 
 header  h1 {
-    font-size: 4em;
+    font-size: 4em; /**/
 }
 
 
 
-/******** Main **************************/
+/******** MAIN **************************/
 
+main  .padding_block {
+    /*border: 5px green solid; /**/
+    padding: 7% 12% 7% 12%;
+}
 main  .a_block {
-    height: 1231px;
+    border: 8px solid red; /**/
+    height: 1098px;
     display: flex;
-    flex-wrap: wrap;     /*retour à la ligne auto*/
-    justify-content: space-between;
-    justify-items: center;
-    align-items: center;
-    padding-left: 111px; 
-    padding-right: 111px;
-    padding-top: 68px;
-    padding-bottom: 64px;
+    flex-direction: row;  /*def*/
+    flex-wrap: wrap;      /*retour à la ligne auto*/
+    justify-content: space-between; /*séparation horiz*/
+    align-content: space-between;   /*séparation verti*/
+
 }
 main  .a_block  a {
-    width: 365px;
-    min-width: 200px;
+    border: 2px solid blue; /**/
     display: flex;      /*a englobe img */
     outline: 0;         /*retire déco séléction(Tab)*/
     box-shadow: 0px 0px 20px 10px #CCC;
+    width: 47%;         /**/
+    /*width: 40%;       /**/
+    /* height: 200px;   /**/
 }
 main  .a_block  a  img {
+    /*flex: 1;
+    /*border: 2px solid green; /**/
+    width: 100%; /**/
+    /*height: auto; /**/
 }
 
+
+
+
+
+/********************/
 
 main  .p_block {
     height: 139px;     
@@ -76,7 +91,7 @@ main  .p_block {
 main  .p_block  p {
     width: 447px;
     line-height: 81px;     /*height + texte centré*/
-    border-radius: 20px;
+    border-radius: 10px;
     font-size: 45px;
     margin: 0;              /*retire les marges*/
 }
@@ -85,33 +100,148 @@ main  .p_block  p {
 /******** Footer ************************/
 
 footer {
-    border: 3px black solid;
-    height: 95px;
-    width: 100%;
+    /*border: 3px black solid;*/
+    height: 95px;                   /*sert d'espace vide pour le child fixed*/
     /*transform: scale(1);*/
 }
 footer  div {
-    border: 3px red solid;
+    /*border: 3px red solid;*/
     height: 95px;
     position: fixed;
+    width: 1024px;                  /*aide position fixed*/
     bottom: 0;
-    /*right: 0;
-    left: 0;*/
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 35px;
 }
 footer  div  p:nth-child(1) {
-    border: 3px orange solid;
     padding-left: 2%;
-    margin: 0;
 }
 footer  div  p:nth-child(2) {
-    border: 3px orange solid;
     padding-right: 2%;
-    margin: 0;
 }
 
 
-/*8 - les Media Queries /**/
+
+/******** Media Queries *******************/
+
+@media screen and (max-width: 1040px)
+{
+
+
+
+
+    
+}
+
+@media screen and (max-width: 900px)
+{
+
+    h1 {
+
+    }
+
+main  .padding_block {
+    /*border: 5px green solid; /**/
+    /*padding: 5% 8% 5% 8%; /**/
+}
+main  .a_block {
+    /*border: 8px solid red; /**/
+    /*min-height: 1098px;
+    display: flex;
+    flex-direction: column;  /*def*/
+    /*flex-wrap: wrap;      /*déf*/
+    /*justify-content: start; /*séparation horiz*/
+    /*align-content: space-between;   /*séparation verti*/
+
+}
+main  .a_block  a {
+    /*border: 2px solid blue; /**/
+    /*width: max-content;
+    /*height: 100%;       /*imge non étiré vers le bas*/
+    /*display: flex;      /*a englobe img */
+    /*outline: 0;         /*retire déco séléction(Tab)*/
+    /**box-shadow: 0px 0px 20px 10px #CCC;*/
+}
+main  .a_block  a  img {
+    /*border: 2px solid green; /**/
+    /*max-width: 365px; /**/
+}
+
+
+}
+
+
+/*
+@media screen and (max-width: 900px)
+{
+
+/*
+main
+{
+    padding: 0; /* retrait de marge */
+/*}
+/*
+main header, main h1
+{
+    text-align: center;
+}
+
+main header, aside header
+{
+    height: 200px; /* même height que header aside */
+/*}
+
+/*
+main section h1, main footer h1
+{
+    border: 4px rgb(196, 245, 253) solid;
+    background-color: rgb(196, 245, 253);
+}
+
+main div
+{
+    padding-left: 50px;
+}
+
+aside p
+{
+    text-align: center;
+}
+
+.contact
+{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.contact p
+{
+    margin: 5px 0 5px 0;
+}
+
+}
+
+
+/****************************************************************/
+/*
+@media screen and (max-width: 590px)
+{
+
+.big_bloc
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.recommandation .big_bloc .bloc
+{
+    padding-left: 0;
+}
+
+.recommandation .big_bloc .bloc p
+{
+    padding-top: 10px;
+}
+
+}*/
