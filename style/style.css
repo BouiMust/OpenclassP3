@@ -47,12 +47,12 @@ header  h1 {
 /******** MAIN **************************/
 
 main .padding_block {
-    border: 10px green solid; /**/
+    border: 5px green solid; /**/
     padding: 7% 10% 7% 10%;
 }
 
 main .a_block {
-    border: 10px solid red; /**/
+    border: 5px solid red; /**/
     display: flex;
     flex-wrap: wrap;
 }
@@ -77,7 +77,7 @@ main .a_block_2 {
 
 
 main  .a_block  a {
-    border: 5px solid blue; /**/
+    border: 3px solid blue; /**/
     display: flex;      /*a englobe img */
     outline: 0;         /*retire déco séléction(Tab)*/
     box-shadow: 0px 0px 20px 10px #CCC;
@@ -113,14 +113,14 @@ main  .p_block  p {
 
 footer {
     /*border: 3px black solid;*/
-    height: 95px;                   /*sert d'espace vide pour le child fixed*/
+    height: 95px;                 /*sert d'espace vide pour le child fixed*/
     /*transform: scale(1);*/
 }
 footer  div {
     /*border: 3px red solid;*/
     height: 95px;
     position: fixed;
-    width: 1024px;                  /*aide position fixed*/
+    width: 1024px;                  /*position fixed sur le body*/
     bottom: 0;
     display: flex;
     justify-content: space-between;
@@ -138,125 +138,203 @@ footer  div  p:nth-child(2) {
 
 /******** MEDIA QUERIES *******************/
 
+
 @media screen and (max-width: 1040px)
 {
     footer  div {
-
-        height: 95px;
-        position: fixed;
-        width: 100%; /*changé*/
-        bottom: 0;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 35px;
+        width: 100%;    /*position fixed sur la fenêtre*/
     }
     
 }
 
+
+
 @media screen and (max-width: 900px)
 {
 
-    main  .padding_block {
-        /*padding: 0;*/
+
+    header {
+        height: 120px; /*mod*/
     }
-}
-main  .a_block {
-    /*border: 8px solid red; /**/
-    /*min-height: 1098px;
-    display: flex;
-    flex-direction: column;  /*def*/
-    /*flex-wrap: wrap;      /*déf*/
-    /*justify-content: start; /*séparation horiz*/
-    /*align-content: space-between;   /*séparation verti*/
+    
+    header  h1 {
+        font-size: 3em; /*mod*/
+    }
+
+    main .padding_block {
+        padding: 5% 8% 5% 8%; /*mod*/
+    }
+    
+    main .a_block {
+        border: 5px solid red;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    main .a_block_1 {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+    
+    main .a_block_separation {
+        height: 50px;
+    }
+    
+    main .a_block_2 {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+    
+    
+    main  .a_block  a {
+        border: 3px solid blue; /**/
+        display: flex;      /*a englobe img */
+        outline: 0;         /*retire déco séléction(Tab)*/
+        box-shadow: 0px 0px 20px 10px #CCC;
+        width: 45%;         /* image étirable sans deformer*/
+    }
+    main  .a_block  a  img {
+        /*border: 2px solid green; /**/
+        width: 100%;        /*100% de a*/
+    }
+
+    
+
+    main  .p_block {
+        max-height: 100px;     /*mod*/
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    main  .p_block  p {
+        width: 400px;           /*mod*/
+        line-height: 72px;      /*mod*/
+        border-radius: 10px;
+        font-size: 40px;        /*mod*/
+        margin: 0;             
+    }
+
+
+
+    footer {
+        height: 80px;              /*mod*/
+        /*transform: scale(1);*/
+    }
+    footer  div {
+        /*border: 3px red solid;*/
+        height: 70px;               /*mod*/
+        position: fixed;
+        bottom: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 30px;            /*mod*/
+    }
+    footer  div  p:nth-child(1) {
+        padding-left: 2%;
+    }
+    footer  div  p:nth-child(2) {
+        padding-right: 2%;
+    }
 
 }
-main  .a_block  a {
-    /*border: 2px solid blue; /**/
-    /*width: max-content;
-    /*height: 100%;       /*imge non étiré vers le bas*/
-    /*display: flex;      /*a englobe img */
-    /*outline: 0;         /*retire déco séléction(Tab)*/
-    /**box-shadow: 0px 0px 20px 10px #CCC;*/
-}
-main  .a_block  a  img {
-    /*border: 2px solid green; /**/
-    /*max-width: 365px; /**/
-}
 
 
-}
 
-
-/*
-@media screen and (max-width: 900px)
+@media screen and (max-width: 500px)
 {
 
-/*
-main
-{
-    padding: 0; /* retrait de marge */
-/*}
-/*
-main header, main h1
-{
-    text-align: center;
+
+    header {
+        height: 60px; /*mod*/
+    }
+    
+    header  h1 {
+        font-size: x-small; /*mod*/
+    }
+
+    main .padding_block {
+        padding: 5% 8% 5% 8%; 
+    }
+    
+    main .a_block {
+        border: 5px solid red;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    main .a_block_1 {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+    
+    main .a_block_separation {
+        height: 50px;
+    }
+    
+    main .a_block_2 {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+    
+    
+    main  .a_block  a {
+        border: 3px solid blue; /**/
+        display: flex;      /*a englobe img */
+        outline: 0;         /*retire déco séléction(Tab)*/
+        box-shadow: 0px 0px 20px 10px #CCC;
+        width: 45%;         /* image étirable sans deformer*/
+    }
+    main  .a_block  a  img {
+        /*border: 2px solid green; /**/
+        width: 100%;        /*100% de a*/
+    }
+
+    
+
+    main  .p_block {
+        max-height: 100px;     /*mod*/
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    main  .p_block  p {
+        width: 400px;           /*mod*/
+        line-height: 72px;      /*mod*/
+        border-radius: 10px;
+        font-size: 40px;        /*mod*/
+        margin: 0;             
+    }
+
+
+
+    footer {
+        height: 80px;              /*mod*/
+        /*transform: scale(1);*/
+    }
+    footer  div {
+        /*border: 3px red solid;*/
+        height: 70px;               /*mod*/
+        position: fixed;
+        bottom: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: x-small;            /*mod*/
+    }
+    footer  div  p:nth-child(1) {
+        padding-left: 2%;
+    }
+    footer  div  p:nth-child(2) {
+        padding-right: 2%;
+    }
+
 }
-
-main header, aside header
-{
-    height: 200px; /* même height que header aside */
-/*}
-
-/*
-main section h1, main footer h1
-{
-    border: 4px rgb(196, 245, 253) solid;
-    background-color: rgb(196, 245, 253);
-}
-
-main div
-{
-    padding-left: 50px;
-}
-
-aside p
-{
-    text-align: center;
-}
-
-.contact
-{
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-.contact p
-{
-    margin: 5px 0 5px 0;
-}
-
-}
-
-
-/****************************************************************/
-/*
-@media screen and (max-width: 590px)
-{
-
-.big_bloc
-{
-    display: flex;
-    flex-direction: column;
-}
-
-.recommandation .big_bloc .bloc
-{
-    padding-left: 0;
-}
-
-.recommandation .big_bloc .bloc p
-{
-    padding-top: 10px;
-}
-
-}*/
