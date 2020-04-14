@@ -47,12 +47,10 @@ header  h1 {
 /******** MAIN **************************/
 
 main .padding_block {
-    border: 5px green solid; /**/
     padding: 7% 10% 7% 10%;
 }
 
 main .a_block {
-    border: 5px solid red; /**/
     display: flex;
     flex-wrap: wrap;
 }
@@ -77,14 +75,12 @@ main .a_block_2 {
 
 
 main  .a_block  a {
-    border: 3px solid blue; /**/
     display: flex;      /*a englobe img */
     outline: 0;         /*retire déco séléction(Tab)*/
     box-shadow: 0px 0px 20px 10px #CCC;
     width: 45%;         /* image étirable sans deformer*/
 }
 main  .a_block  a  img {
-    /*border: 2px solid green; /**/
     width: 100%;        /*100% de a*/
 }
 
@@ -166,7 +162,6 @@ footer  div  p:nth-child(2) {
     }
     
     main .a_block {
-        border: 5px solid red;
         display: flex;
         flex-wrap: wrap;
     }
@@ -191,14 +186,13 @@ footer  div  p:nth-child(2) {
     
     
     main  .a_block  a {
-        border: 3px solid blue; /**/
         display: flex;      /*a englobe img */
         outline: 0;         /*retire déco séléction(Tab)*/
         box-shadow: 0px 0px 20px 10px #CCC;
         width: 45%;         /* image étirable sans deformer*/
     }
     main  .a_block  a  img {
-        /*border: 2px solid green; /**/
+        
         width: 100%;        /*100% de a*/
     }
 
@@ -254,15 +248,14 @@ footer  div  p:nth-child(2) {
     }
     
     header  h1 {
-        font-size: x-small; /*mod*/
+        font-size: 2em; /*mod*/
     }
 
     main .padding_block {
-        padding: 5% 8% 5% 8%; 
+        padding: 0 0 5% 0;         /*mod*/
     }
     
     main .a_block {
-        border: 5px solid red;
         display: flex;
         flex-wrap: wrap;
     }
@@ -271,64 +264,62 @@ footer  div  p:nth-child(2) {
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
-        justify-content: space-between;
+        justify-content: stretch; /*mod*/
     }
     
     main .a_block_separation {
-        height: 50px;
+        display: none;              /*mod*/
     }
     
     main .a_block_2 {
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
-        justify-content: space-between;
+        justify-content: stretch;    /*mod*/
     }
     
     
     main  .a_block  a {
-        border: 3px solid blue; /**/
+        border: 1px solid #DDD; /*mod*/
         display: flex;      /*a englobe img */
         outline: 0;         /*retire déco séléction(Tab)*/
-        box-shadow: 0px 0px 20px 10px #CCC;
-        width: 45%;         /* image étirable sans deformer*/
+        box-shadow: none;           /*mod*/
+        width: auto;              /*mod*/
     }
     main  .a_block  a  img {
-        /*border: 2px solid green; /**/
         width: 100%;        /*100% de a*/
     }
 
     
 
     main  .p_block {
-        max-height: 100px;     /*mod*/
+        max-height: 80px;     /*mod*/
         display: flex;
         justify-content: center;
         align-items: flex-start;
     }
     main  .p_block  p {
-        width: 400px;           /*mod*/
-        line-height: 72px;      /*mod*/
+        width: 200px;           /*mod*/
+        line-height: 36px;      /*mod*/
         border-radius: 10px;
-        font-size: 40px;        /*mod*/
+        font-size: 20px;        /*mod*/
         margin: 0;             
     }
 
 
 
     footer {
-        height: 80px;              /*mod*/
+        height: 50px;              /*mod*/
         /*transform: scale(1);*/
     }
     footer  div {
-        /*border: 3px red solid;*/
-        height: 70px;               /*mod*/
+        height: 50px;               /*mod*/
         position: fixed;
         bottom: 0;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        font-size: x-small;            /*mod*/
+        font-size: 15px;            /*mod*/
     }
     footer  div  p:nth-child(1) {
         padding-left: 2%;
