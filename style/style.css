@@ -39,20 +39,23 @@ header {
 }
 
 header  h1 {
-    font-size: 4em; /**/
+    /*font-size: 4em;  /* à éviter*/
 }
 
 
 
 /******** MAIN **************************/
 
-main .padding_block {
-    padding: 7% 10% 7% 10%;
+main .padding_block { 
+    padding: 60px 0 60px 0;   /*éviter les % */
 }
 
 main .a_block {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 80%; /**/
+    margin: auto; /**/
 }
 
 main .a_block_1 {
@@ -91,16 +94,17 @@ main  .a_block  a  img {
 /********************/
 
 main  .p_block {
-    height: 139px;     
+    height: 120px;     
     display: flex;
     justify-content: center;
     align-items: flex-start;
 }
 main  .p_block  p {
-    width: 447px;
-    line-height: 81px;     /*height + texte centré*/
+    width: 40%;
+    height: 50%;
+    /*line-height: 81px;     /*height + texte centré*/
     border-radius: 10px;
-    font-size: 45px;
+    /*font-size: 45px;      /* à éviter */
     margin: 0;              /*retire les marges*/
 }
 
@@ -108,26 +112,24 @@ main  .p_block  p {
 /******** Footer ************************/
 
 footer {
-    /*border: 3px black solid;*/
     height: 95px;                 /*sert d'espace vide pour le child fixed*/
     /*transform: scale(1);*/
 }
 footer  div {
-    /*border: 3px red solid;*/
     height: 95px;
-    position: fixed;
+    position: fixed;                /*sort du flux HTML*/
     width: 1024px;                  /*position fixed sur le body*/
     bottom: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 35px;
+    /*font-size: 35px;              /* à éviter */
 }
 footer  div  p:nth-child(1) {
-    padding-left: 2%;
+    padding-left: 20px;
 }
 footer  div  p:nth-child(2) {
-    padding-right: 2%;
+    padding-right: 20px;
 }
 
 
@@ -150,88 +152,53 @@ footer  div  p:nth-child(2) {
 
 
     header {
-        height: 120px; /*mod*/
+        height: 100px; /*mod*/
     }
     
     header  h1 {
-        font-size: 3em; /*mod*/
     }
 
     main .padding_block {
-        padding: 5% 8% 5% 8%; /*mod*/
+        padding: 40px 0 40px 0;   /*mod*/
     }
     
     main .a_block {
-        display: flex;
-        flex-wrap: wrap;
     }
     
     main .a_block_1 {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: space-between;
     }
     
     main .a_block_separation {
-        height: 50px;
     }
     
     main .a_block_2 {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: space-between;
     }
-    
     
     main  .a_block  a {
-        display: flex;      /*a englobe img */
-        outline: 0;         /*retire déco séléction(Tab)*/
-        box-shadow: 0px 0px 20px 10px #CCC;
-        width: 45%;         /* image étirable sans deformer*/
-    }
-    main  .a_block  a  img {
-        
-        width: 100%;        /*100% de a*/
     }
 
-    
+    main  .a_block  a  img {
+    }
 
     main  .p_block {
         max-height: 100px;     /*mod*/
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
     }
+
     main  .p_block  p {
-        width: 400px;           /*mod*/
-        line-height: 72px;      /*mod*/
-        border-radius: 10px;
-        font-size: 40px;        /*mod*/
-        margin: 0;             
     }
-
-
 
     footer {
-        height: 80px;              /*mod*/
-        /*transform: scale(1);*/
+        height: 60px;              /*mod*/
     }
+
     footer  div {
-        height: 70px;               /*mod*/
-        position: fixed;
-        bottom: 0;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 30px;            /*mod*/
+        height: 60px;               /*mod*/
     }
+
     footer  div  p:nth-child(1) {
-        padding-left: 2%;
     }
+
     footer  div  p:nth-child(2) {
-        padding-right: 2%;
     }
 
 }
@@ -241,27 +208,24 @@ footer  div  p:nth-child(2) {
 @media screen and (max-width: 500px)
 {
 
-
     header {
-        height: 60px; /*mod*/
+        height: 60px;       /*mod*/
     }
     
     header  h1 {
-        font-size: 2em; /*mod*/
     }
 
     main .padding_block {
-        padding: 0 0 8% 0;         /*mod*/
+        padding: 0;         /*mod*/
     }
     
     main .a_block {
-        display: flex;
-        flex-wrap: wrap;
+        width: 80%;         /*mod*/
     }
     
     main .a_block_1 {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;   /*mod*/
         flex-wrap: nowrap;
         justify-content: stretch; /*mod*/
     }
@@ -272,61 +236,44 @@ footer  div  p:nth-child(2) {
     
     main .a_block_2 {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;      /*mod*/
         flex-wrap: nowrap;
         justify-content: stretch;    /*mod*/
     }
     
-    
     main  .a_block  a {
-        border: 1px solid #DDD; /*mod*/
-        display: flex;      /*a englobe img */
-        outline: 0;         /*retire déco séléction(Tab)*/
+        border: 1px solid #DDD;   /*mod*/
         box-shadow: none;           /*mod*/
-        width: auto;              /*mod*/
-    }
-    main  .a_block  a  img {
-        width: 100%;        /*100% de a*/
+        width: 100%;                /*mod*/
     }
 
-    
+    main  .a_block  a  img {
+    }
 
     main  .p_block {
-        max-height: 80px;     /*mod*/
+        max-height: 80px;           /*mod*/
         display: flex;
         justify-content: center;
-        align-items: flex-start;
+        align-items: center;        /*mod*/
     }
+
     main  .p_block  p {
-        width: 200px;           /*mod*/
-        line-height: 36px;      /*mod*/
-        border-radius: 10px;
-        font-size: 20px;        /*mod*/
-        margin: 0;             
     }
-
-
 
     footer {
-        height: 50px;              /*mod*/
-        /*transform: scale(1);*/
+        height: 40px;               /*mod*/
     }
+
     footer  div {
-        height: 50px;               /*mod*/
-        position: fixed;
-        bottom: 0;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        height: 40px;               /*mod*/
         font-size: 15px;            /*mod*/
     }
+
     footer  div  p:nth-child(1) {
-        padding-left: 2%;
     }
+
     footer  div  p:nth-child(2) {
-        padding-right: 2%;
     }
 
     
 }
-
