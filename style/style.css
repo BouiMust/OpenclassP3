@@ -243,8 +243,8 @@ footer  div  p:nth-child(2) {
     
     main  .a_block  a {
         border: 1px solid #DDD;   /*mod*/
-        box-shadow: none;           /*mod*/
         width: 100%;                /*mod*/
+        margin-top: 20px;           /*mod*/
     }
 
     main  .a_block  a  img {
