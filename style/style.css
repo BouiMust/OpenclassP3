@@ -10,12 +10,11 @@ body {
     margin: auto;           /*centre le body*/
     background: #EEE;
     box-shadow: 0px 0px 30px 10px #CCC;
+    font-family: Verdana, serif, sans-serif;
 }
 
-.yellow {                   /*tous les textes*/
+.yellow {                   /*tous les textes (h1, p, a)*/
     color: #fdcb46;
-    text-align: center;
-    font-family: Verdana, serif, sans-serif;
 }
 
 .green {
@@ -26,6 +25,10 @@ body {
     background: #FFF;
 }
 
+a {
+    text-decoration: none;
+    outline: 0;         /*retire déco séléction(Tab)*/
+}
 
 
 /******** HEADER ************************/
@@ -38,10 +41,9 @@ header {
     align-items: center;
 }
 
-header  h1 {
-    /*font-size: 4em;  /* à éviter*/
+header a h1 {
+    margin: 0;
 }
-
 
 
 /******** MAIN **************************/
@@ -50,12 +52,12 @@ main .padding_block {
     padding: 60px 0 60px 0;   /*éviter les % */
 }
 
-main .a_block {
+main .a_block, .menu {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    width: 80%; /**/
-    margin: auto; /**/
+    width: 80%;
+    margin: auto;
 }
 
 main .a_block_1 {
@@ -79,7 +81,6 @@ main .a_block_2 {
 
 main  .a_block  a {
     display: flex;      /*a englobe img */
-    outline: 0;         /*retire déco séléction(Tab)*/
     box-shadow: 0px 0px 20px 5px #CCC;
     width: 45%;         /* image étirable sans deformer*/
 }
@@ -88,10 +89,7 @@ main  .a_block  a  img {
 }
 
 
-
-
-
-/********************/
+/********* PROCHAINEMENT ***********/
 
 main  .p_block {
     height: 120px;     
@@ -103,7 +101,6 @@ main  .p_block  p {
     width: 40%;
     padding: 20px 0 20px 0;
     border-radius: 10px;
-    font-size: 1.3em;
     margin: 0;              /*retrait des marges*/
     display: flex;
     justify-content: center;
@@ -111,11 +108,27 @@ main  .p_block  p {
 }
 
 
-/******** Footer ************************/
+
+/********** PAGES DU MENU ************/
+
+.title {                    /*titre au dessus du menu*/
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+    padding: 0 0 20px 0;
+}
+.menu {                     /*image menu*/
+    box-shadow: 0px 0px 20px 5px #CCC;
+}
+.below_menu {               /*en-dessous du menu*/
+    height: 20px; 
+}
+
+
+/*********** FOOTER *******************/
 
 footer {
-    height: 95px;                 /*sert d'espace vide pour le child fixed*/
-    /*transform: scale(1);*/
+    height: 95px;              /*sert d'espace vide pour le child fixed*/
 }
 footer  div {
     height: 95px;
@@ -125,13 +138,12 @@ footer  div {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /*font-size: 35px;              /* à éviter */
 }
-footer  div  p:nth-child(1) {
-    padding-left: 20px;
+footer  div  a:nth-child(1) {
+    margin-left: 20px;
 }
-footer  div  p:nth-child(2) {
-    padding-right: 20px;
+footer  div  a:nth-child(2) {
+    margin-right: 20px;
 }
 
 
@@ -199,10 +211,10 @@ footer  div  p:nth-child(2) {
         height: 60px;               /*mod*/
     }
 
-    footer  div  p:nth-child(1) {
+    footer  div  a:nth-child(1) {
     }
 
-    footer  div  p:nth-child(2) {
+    footer  div  a:nth-child(2) {
     }
 
 }
@@ -220,18 +232,18 @@ footer  div  p:nth-child(2) {
     }
 
     main .padding_block {
-        padding: 0 0 10px 0;   /*mod*/
+        padding: 0 0 10px 0;        /*mod*/
     }
     
     main .a_block {
-        width: 80%;         /*mod*/
+        width: 80%;                 /*mod*/
     }
     
     main .a_block_1 {
         display: flex;
-        flex-direction: column;   /*mod*/
+        flex-direction: column;     /*mod*/
         flex-wrap: nowrap;
-        justify-content: stretch; /*mod*/
+        justify-content: stretch;   /*mod*/
     }
     
     main .a_block_separation {
@@ -239,9 +251,7 @@ footer  div  p:nth-child(2) {
     }
     
     main .a_block_2 {
-        display: flex;
         flex-direction: column;      /*mod*/
-        flex-wrap: nowrap;
         justify-content: stretch;    /*mod*/
     }
     
@@ -259,8 +269,12 @@ footer  div  p:nth-child(2) {
     }
 
     main  .p_block  p {
-        min-width: 250px;           /*mod*/
+        min-width: 230px;           /*mod*/
         padding: 10px 0 10px 0;     /*mod*/
+    }
+
+    .title {
+        padding: 20px 0 10px 0;     /*mod*/
     }
 
     footer {
@@ -269,13 +283,12 @@ footer  div  p:nth-child(2) {
 
     footer  div {
         height: 40px;               /*mod*/
-        font-size: 15px;            /*mod*/
     }
 
-    footer  div  p:nth-child(1) {
+    footer  div  a:nth-child(1) {
     }
 
-    footer  div  p:nth-child(2) {
+    footer  div  a:nth-child(2) {
     }
 
     
