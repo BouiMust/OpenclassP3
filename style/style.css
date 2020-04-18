@@ -168,9 +168,6 @@ footer  div  a:nth-child(2) {
     header {
         height: 100px;            /*mod*/
     }
-    
-    header  h1 {
-    }
 
     main .padding_block {
         padding: 40px 0 60px 0;   /*mod*/
@@ -180,24 +177,6 @@ footer  div  a:nth-child(2) {
         width: 90%;               /*mod*/
     }
     
-    main .a_block_1 {
-    }
-    
-    main .a_block_separation {
-    }
-    
-    main .a_block_2 {
-    }
-    
-    main  .a_block  a {
-    }
-
-    main  .a_block  a  img {
-    }
-
-    main  .p_block {
-    }
-
     main  .p_block  p {
         min-width: 300px;           /*mod*/
         padding: 15px 0 15px 0;     /*mod*/
@@ -211,12 +190,6 @@ footer  div  a:nth-child(2) {
         height: 60px;               /*mod*/
     }
 
-    footer  div  a:nth-child(1) {
-    }
-
-    footer  div  a:nth-child(2) {
-    }
-
 }
 
 
@@ -226,9 +199,6 @@ footer  div  a:nth-child(2) {
 
     header {
         height: 60px;       /*mod*/
-    }
-    
-    header  h1 {
     }
 
     main .padding_block {
@@ -240,9 +210,7 @@ footer  div  a:nth-child(2) {
     }
     
     main .a_block_1 {
-        display: flex;
         flex-direction: column;     /*mod*/
-        flex-wrap: nowrap;
         justify-content: stretch;   /*mod*/
     }
     
@@ -259,9 +227,6 @@ footer  div  a:nth-child(2) {
         border: 1px solid #DDD;   /*mod*/
         width: 100%;                /*mod*/
         margin-top: 20px;           /*mod*/
-    }
-
-    main  .a_block  a  img {
     }
 
     main  .p_block {
@@ -284,12 +249,5 @@ footer  div  a:nth-child(2) {
     footer  div {
         height: 40px;               /*mod*/
     }
-
-    footer  div  a:nth-child(1) {
-    }
-
-    footer  div  a:nth-child(2) {
-    }
-
     
 }
