@@ -101,11 +101,13 @@ main  .p_block {
 }
 main  .p_block  p {
     width: 40%;
-    height: 50%;
-    /*line-height: 81px;     /*height + texte centré*/
+    padding: 20px 0 20px 0;
     border-radius: 10px;
-    /*font-size: 45px;      /* à éviter */
-    margin: 0;              /*retire les marges*/
+    font-size: 1.3em;
+    margin: 0;              /*retrait des marges*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -152,17 +154,18 @@ footer  div  p:nth-child(2) {
 
 
     header {
-        height: 100px; /*mod*/
+        height: 100px;            /*mod*/
     }
     
     header  h1 {
     }
 
     main .padding_block {
-        padding: 40px 0 40px 0;   /*mod*/
+        padding: 40px 0 60px 0;   /*mod*/
     }
     
     main .a_block {
+        width: 90%;               /*mod*/
     }
     
     main .a_block_1 {
@@ -181,10 +184,11 @@ footer  div  p:nth-child(2) {
     }
 
     main  .p_block {
-        max-height: 100px;     /*mod*/
     }
 
     main  .p_block  p {
+        min-width: 300px;           /*mod*/
+        padding: 15px 0 15px 0;     /*mod*/
     }
 
     footer {
@@ -216,7 +220,7 @@ footer  div  p:nth-child(2) {
     }
 
     main .padding_block {
-        padding: 0;         /*mod*/
+        padding: 0 0 10px 0;   /*mod*/
     }
     
     main .a_block {
@@ -251,13 +255,12 @@ footer  div  p:nth-child(2) {
     }
 
     main  .p_block {
-        max-height: 80px;           /*mod*/
-        display: flex;
-        justify-content: center;
         align-items: center;        /*mod*/
     }
 
     main  .p_block  p {
+        min-width: 250px;           /*mod*/
+        padding: 10px 0 10px 0;     /*mod*/
     }
 
     footer {
