@@ -45,6 +45,9 @@ header a h1 {
     margin: 0;
 }
 
+header a h1:hover {
+    color: #ffdc7d;
+}
 
 /******** MAIN **************************/
 
@@ -148,6 +151,144 @@ footer  div  a:nth-child(2) {
 
 
 
+
+/*********** ANIMATION ***********************/
+
+
+/* Pour chaque item de type menu, une animation qui fait un zoom sur l'image devra  être intégrée, avec un effet de fondu (réduire l'opacité) sans faire grossir le cadre initial*/
+main  .a_block  a  img {
+    animation-name: zoom;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes zoom {
+    0% {
+        opacity: 1;
+        transform: scale(1), ;
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* dans la section prochainement, des points de suspension devront s’animer progressivement. Ils pourront soit s’agiter comme quand quelqu’un tape un nouveau message, soit apparaître progressivement.*/
+.ball {
+    height: 58px;
+    flex: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ball * {
+    width : 1em;
+    height: 1em;
+    border-radius: 50%;
+    background-color: #579c87;
+    position: relative;
+}
+
+.ball_1, .ball_2, .ball_3 {
+    animation-name: gotoleft;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.ball_2 {
+    animation-delay: 300ms;
+}
+.ball_3 {
+    animation-delay: 600ms;
+}
+
+@keyframes gotoleft {
+    0% {
+        opacity: 0;
+        right: -15%;
+    }
+    20% {
+        opacity: 1;
+    }
+    60% {
+        opacity: 0;
+        right: 15%;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.ball_4, .ball_5, .ball_6 {
+    animation-name: gotoright;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.ball_5 {
+    animation-delay: 300ms;
+}
+.ball_4 {
+    animation-delay: 600ms;
+}
+@keyframes gotoright {
+    0% {
+        opacity: 0;
+        left: -15%;
+    }
+    20% {
+        opacity: 1;
+    }
+    60% {
+        opacity: 0;
+        left: 15%;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+
+/* les boutons “contact” et “mentions légales” devront se secouer (effet wiggle)*/
+footer  div  a {
+    position: relative;
+    animation-name: wiggle;
+    animation-duration: 100ms;
+    animation-iteration-count: infinite;
+}
+@keyframes wiggle {
+    0% {
+        top: 0;
+        bottom: 0;
+      }
+    50% {
+        top: 3px;
+        bottom: 3px;
+    }
+    100% {
+        top: 0;
+        bottom: 0;
+    }
+}
+
+footer  div  a:hover {
+    animation: none;
+    color: #ffdc7d;
+}
+
+/* les titres représentant les catégories entrées, plats, desserts devront être soulignés de gauche à droite au survol de la souris​*/
+
+
+
+
+
 /******** MEDIA QUERIES *******************/
 
 
@@ -189,7 +330,9 @@ footer  div  a:nth-child(2) {
     footer  div {
         height: 60px;               /*mod*/
     }
-
+    .ball {                         /*animation*/
+        height: 50px;
+    }
 }
 
 
@@ -249,5 +392,8 @@ footer  div  a:nth-child(2) {
     footer  div {
         height: 40px;               /*mod*/
     }
-    
+    .ball * {                       /*animation*/
+        width : 0.7em;
+        height: 0.7em;
+    }
 }
