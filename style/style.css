@@ -86,6 +86,7 @@ main  .a_block  a {
     display: flex;      /*a englobe img */
     box-shadow: 0px 0px 20px 5px #CCC;
     width: 45%;         /* image étirable sans deformer*/
+    overflow: hidden;   /* cache le dépassement animation zoom*/
 }
 main  .a_block  a  img {
     width: 100%;        /*100% de a*/
@@ -165,7 +166,7 @@ main  .a_block  a  img {
 @keyframes zoom {
     0% {
         opacity: 1;
-        transform: scale(1), ;
+        transform: scale(1);
     }
     50% {
         opacity: 0.5;
