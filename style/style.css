@@ -1,5 +1,9 @@
 /******** polices personnalisées ********/
-
+@font-face {
+    font-family: 'sweety';
+    src: url('sweety.otf') format('opentype'),
+         url('sweety.ttf') format('truetype');
+}
 
 
 /******** Styles globaux ****************/
@@ -11,6 +15,7 @@ body {
     background: #EEE;
     box-shadow: 0px 0px 30px 10px #CCC;
     font-family: Verdana, serif, sans-serif;
+
 }
 
 .yellow {                   /*tous les textes (h1, p, a)*/
@@ -55,7 +60,7 @@ main .padding_block {
     padding: 60px 0 60px 0;   /*éviter les % */
 }
 
-main .a_block, .menu {
+main .a_block {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -115,17 +120,62 @@ main  .p_block  p {
 
 /********** PAGES DU MENU ************/
 
-.title {                    /*titre au dessus du menu*/
-    font-weight: bold;
-    text-align: center;
-    margin: 0;
-    padding: 0 0 20px 0;
+main {
+    border: 1px solid #FFF;      /*résoud problème de marge*/
 }
-.menu {                     /*image menu*/
+
+main .menu {                          /*menu (exterieur)*/
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 80%;
+    margin: 60px auto 60px auto;
+    background-color: #fcdfdb;
     box-shadow: 0px 0px 20px 5px #CCC;
+    border: 2px red solid;
 }
-.below_menu {               /*en-dessous du menu*/
-    height: 20px; 
+main .menu .margin_menu {            /*menu (interieur)*/
+    margin: 60px;
+    font-family: "sweety", Verdana, serif, sans-serif;
+    font-size: 1.5em;
+    border: 1px solid;
+}
+
+main .menu .margin_menu .logo_note {      /* logos */
+    display: flex;
+    justify-content: center;
+}
+
+main .menu .margin_menu .title {           /*div(h2+img)*/
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid;
+}
+
+main .menu .margin_menu .title * {              /* h2+img */
+    margin: auto;
+    flex: 1;
+    border: 1px solid;
+}
+main .menu .margin_menu .title *:nth-child(2) {  /* h2 */
+    flex: 1.1;
+    text-align: center;
+}
+
+main .menu .margin_menu .description {           /* plats + prix */
+    display: flex;
+    justify-content: space-between;
+}
+
+main .menu .margin_menu .description *:nth-child(2) {   /*prix*/
+    font-weight: bold;
+}
+
+main .menu .margin_menu .espace {
+    height: 30px;
 }
 
 
@@ -156,30 +206,17 @@ footer  div  a:nth-child(2) {
 /*********** ANIMATION ***********************/
 
 
-/* Pour chaque item de type menu, une animation qui fait un zoom sur l'image devra  être intégrée, avec un effet de fondu (réduire l'opacité) sans faire grossir le cadre initial*/
+/* Zoom et opacité sur les menus */
 main  .a_block  a  img {
-    animation-name: zoom;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+transition-duration: 500ms;    
+transition-property: transform, opacity;
 }
-@keyframes zoom {
-    0% {
-        opacity: 1;
-        transform: scale(1);
-    }
-    50% {
-        opacity: 0.5;
-        transform: scale(1.1);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
+main  .a_block  a  img:hover {
+    transform: scale(1.2);
+    opacity: 0.5;
 }
 
-
-/* dans la section prochainement, des points de suspension devront s’animer progressivement. Ils pourront soit s’agiter comme quand quelqu’un tape un nouveau message, soit apparaître progressivement.*/
+/* Points de suspension animés */
 .ball {
     height: 58px;
     flex: auto;
@@ -257,34 +294,44 @@ main  .a_block  a  img {
 
 
 
-/* les boutons “contact” et “mentions légales” devront se secouer (effet wiggle)*/
-footer  div  a {
+/* “contact” et “mentions légales” avec effet wiggle */
+footer  div  a:hover {
+    color: hsl(44, 98%, 73%);
     position: relative;
     animation-name: wiggle;
     animation-duration: 100ms;
-    animation-iteration-count: infinite;
+    animation-iteration-count: 2;
 }
 @keyframes wiggle {
     0% {
         top: 0;
-        bottom: 0;
       }
-    50% {
+    33% {
         top: 3px;
-        bottom: 3px;
+        right: 3px;
+    }
+    66% {
+        top: -3px;
+        right: -3px;
     }
     100% {
         top: 0;
-        bottom: 0;
     }
 }
 
-footer  div  a:hover {
-    animation: none;
-    color: #ffdc7d;
-}
 
 /* les titres représentant les catégories entrées, plats, desserts devront être soulignés de gauche à droite au survol de la souris​*/
+
+
+
+
+/*
+tt les ANIMATIONs 1X + au SURVOL
+modifier les metas des pages html
+modifier les 3 pages restantes
+regler problème chrome
+*/
+
 
 
 
@@ -380,10 +427,6 @@ footer  div  a:hover {
     main  .p_block  p {
         min-width: 230px;           /*mod*/
         padding: 10px 0 10px 0;     /*mod*/
-    }
-
-    .title {
-        padding: 20px 0 10px 0;     /*mod*/
     }
 
     footer {
