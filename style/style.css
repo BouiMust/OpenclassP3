@@ -132,46 +132,57 @@ main .menu {                          /*menu (exterieur)*/
     margin: 60px auto 60px auto;
     background-color: #fcdfdb;
     box-shadow: 0px 0px 20px 5px #CCC;
-    border: 2px red solid;
 }
 main .menu .margin_menu {            /*menu (interieur)*/
     margin: 60px;
     font-family: "sweety", Verdana, serif, sans-serif;
     font-size: 1.5em;
-    border: 1px solid;
+    font-weight: normal;
+    color: #3d1319;
 }
 
 main .menu .margin_menu .logo_note {      /* logos */
     display: flex;
     justify-content: center;
 }
+main .menu .margin_menu .logo_note div {
+    display: flex;
+}
 
-main .menu .margin_menu .title {           /*div(h2+img)*/
+main .menu .margin_menu .logo_note div img {
+    width: 100%;
+}
+
+main .menu .margin_menu .title {           /*div(h2+div(img))*/
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid;
 }
 
-main .menu .margin_menu .title * {              /* h2+img */
-    margin: auto;
+main .menu .margin_menu .title * {           /*h2+div(img)*/
+    margin: 0;
     flex: 1;
-    border: 1px solid;
 }
-main .menu .margin_menu .title *:nth-child(2) {  /* h2 */
-    flex: 1.1;
+main .menu .margin_menu .title *:nth-child(2) {   /*h2*/
     text-align: center;
+    flex: 1.2;
+    min-width: 6em;
 }
 
-main .menu .margin_menu .description {           /* plats + prix */
+main .menu .margin_menu .title img {              /*img*/
+    width: 100%;
+}
+
+main .menu .margin_menu .description {           /*plats+prix*/
     display: flex;
     justify-content: space-between;
 }
 
 main .menu .margin_menu .description *:nth-child(2) {   /*prix*/
     font-weight: bold;
+    margin-left: 20px;
 }
 
 main .menu .margin_menu .espace {
@@ -208,8 +219,8 @@ footer  div  a:nth-child(2) {
 
 /* Zoom et opacité sur les menus */
 main  .a_block  a  img {
-transition-duration: 500ms;    
-transition-property: transform, opacity;
+    transition-property: transform, opacity;
+    transition-duration: 500ms;    
 }
 main  .a_block  a  img:hover {
     transform: scale(1.2);
@@ -294,7 +305,7 @@ main  .a_block  a  img:hover {
 
 
 
-/* “contact” et “mentions légales” avec effet wiggle */
+/* Liens “contact” et “mentions légales” avec effet wiggle */
 footer  div  a:hover {
     color: hsl(44, 98%, 73%);
     position: relative;
@@ -320,16 +331,32 @@ footer  div  a:hover {
 }
 
 
-/* les titres représentant les catégories entrées, plats, desserts devront être soulignés de gauche à droite au survol de la souris​*/
-
-
+/* Titres représentant les catégories entrées, plats, desserts sont soulignés de gauche à droite au survol​*/
+h2 {
+    position: relative;
+}
+h2:hover::before {
+    width: 100%;
+}
+h2::before {
+    content: '';
+    display: block;
+    background: orange;
+    opacity: 0.5;
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 5px;
+    transition: width 500ms;
+}
+  
 
 
 /*
-tt les ANIMATIONs 1X + au SURVOL
-modifier les metas des pages html
+
+responsiv
 modifier les 3 pages restantes
-regler problème chrome
+modifier les metadatas
 */
 
 
@@ -355,28 +382,28 @@ regler problème chrome
 
 
     header {
-        height: 100px;            /*mod*/
+        height: 100px;            
     }
 
     main .padding_block {
-        padding: 40px 0 60px 0;   /*mod*/
+        padding: 40px 0 60px 0;   
     }
     
-    main .a_block {
-        width: 90%;               /*mod*/
+    main .a_block, main .menu {
+        width: 90%;               
     }
     
     main  .p_block  p {
-        min-width: 300px;           /*mod*/
-        padding: 15px 0 15px 0;     /*mod*/
+        min-width: 300px;           
+        padding: 15px 0 15px 0;     
     }
 
     footer {
-        height: 60px;              /*mod*/
+        height: 60px;              
     }
 
     footer  div {
-        height: 60px;               /*mod*/
+        height: 60px;               
     }
     .ball {                         /*animation*/
         height: 50px;
@@ -389,55 +416,62 @@ regler problème chrome
 {
 
     header {
-        height: 60px;       /*mod*/
+        height: 60px;       
     }
 
     main .padding_block {
-        padding: 0 0 10px 0;        /*mod*/
+        padding: 0 0 10px 0;        
     }
     
     main .a_block {
-        width: 80%;                 /*mod*/
+        width: 80%;                 
     }
     
     main .a_block_1 {
-        flex-direction: column;     /*mod*/
-        justify-content: stretch;   /*mod*/
+        flex-direction: column;     
+        justify-content: stretch;   
     }
     
     main .a_block_separation {
-        display: none;              /*mod*/
+        display: none;              
     }
     
     main .a_block_2 {
-        flex-direction: column;      /*mod*/
-        justify-content: stretch;    /*mod*/
+        flex-direction: column;      
+        justify-content: stretch;    
     }
     
     main  .a_block  a {
-        border: 1px solid #DDD;   /*mod*/
-        width: 100%;                /*mod*/
-        margin-top: 20px;           /*mod*/
+        border: 1px solid #DDD;   
+        width: 100%;                
+        margin-top: 20px;           
     }
 
     main  .p_block {
-        align-items: center;        /*mod*/
+        align-items: center;        
     }
 
     main  .p_block  p {
-        min-width: 230px;           /*mod*/
-        padding: 10px 0 10px 0;     /*mod*/
+        min-width: 230px;           
+        padding: 10px 0 10px 0;     
     }
 
     footer {
-        height: 40px;               /*mod*/
+        height: 40px;               
     }
 
     footer  div {
-        height: 40px;               /*mod*/
+        height: 40px;               
     }
     .ball * {                       /*animation*/
         width : 0.7em;
         height: 0.7em;
+    }
+    h2::before {                    /*animation*/
+        display: none;
+    }
+    main .menu .margin_menu .title {           /*page menu*/
+        flex-direction: column;
+        margin-bottom: -20px;
     }
 }
