@@ -497,4 +497,7 @@ h2::before {
         align-items: stretch;
         margin-bottom: -20px;
     }
+    main .menu .margin_menu .title *:nth-child(2) {   /*h2*/
+        min-width: auto;
+    }
 }
