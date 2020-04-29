@@ -15,19 +15,17 @@ body {
     background: #EEE;
     box-shadow: 0px 0px 30px 10px #CCC;
     font-family: Verdana, serif, sans-serif;
-
 }
+
 
 .yellow {                   /*tous les textes (h1, p, a)*/
     color: #fdcb46;
 }
-
 .green {
-    background: #579c87;
+    background-color: #579c87;
 }
-
 .white {
-    background: #FFF;
+    background-color: #FFF;
 }
 
 a {
@@ -130,15 +128,13 @@ main .menu {                          /*menu (exterieur)*/
     flex-wrap: nowrap;
     width: 80%;
     margin: 60px auto 60px auto;
-    background-color: #fcdfdb;
     box-shadow: 0px 0px 20px 5px #CCC;
+    font-family: "sweety", Verdana, serif, sans-serif;
 }
 main .menu .margin_menu {            /*menu (interieur)*/
     margin: 60px;
-    font-family: "sweety", Verdana, serif, sans-serif;
     font-size: 1.5em;
     font-weight: normal;
-    color: #3d1319;
 }
 
 main .menu .margin_menu .logo_note {      /* logos */
@@ -147,6 +143,7 @@ main .menu .margin_menu .logo_note {      /* logos */
 }
 main .menu .margin_menu .logo_note div {
     display: flex;
+    max-width: 22em;
 }
 
 main .menu .margin_menu .logo_note div img {
@@ -168,7 +165,7 @@ main .menu .margin_menu .title * {           /*h2+div(img)*/
 main .menu .margin_menu .title *:nth-child(2) {   /*h2*/
     text-align: center;
     flex: 1.2;
-    min-width: 6em;
+    min-width: max-content;
 }
 
 main .menu .margin_menu .title img {              /*img*/
@@ -189,6 +186,36 @@ main .menu .margin_menu .espace {
     height: 30px;
 }
 
+.verdana {
+    font-family: none;
+}
+.title_size {
+    font-size: 1.3em;
+}
+.brown {
+    color: #3d1319;
+}
+.beige {
+    background-color: #fcdfdb;
+}
+.lightgrey {
+    background-color: #fff5fe;
+}
+.orange {
+    color: #c67412;
+}
+.purple {
+    color: #a56799;
+}
+.indigo {
+    color: #6e4ccc;
+}
+.silver {
+    background-color: #edefef;
+}
+.white_2 {
+    background-color: #fdfffd;
+}
 
 /*********** FOOTER *******************/
 
@@ -352,14 +379,6 @@ h2::before {
   
 
 
-/*
-
-responsiv
-modifier les 3 pages restantes
-modifier les metadatas
-*/
-
-
 
 
 
@@ -470,8 +489,12 @@ modifier les metadatas
     h2::before {                    /*animation*/
         display: none;
     }
+    main .menu .margin_menu {            /*page menu*/
+        margin: 30px;
+    }
     main .menu .margin_menu .title {           /*page menu*/
         flex-direction: column;
+        align-items: stretch;
         margin-bottom: -20px;
     }
 }
