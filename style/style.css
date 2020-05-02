@@ -239,6 +239,10 @@ main .menu .margin_menu .logo_note div img {
     width: 50%;
 }
 
+main .menu .margin_menu .font {            /*page menu*/
+    font-size: 3em;
+}
+
 main .menu .margin_menu .title {           /*div(h2+div(img))*/
     display: flex;
     flex-direction: row;
