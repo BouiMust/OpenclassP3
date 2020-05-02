@@ -4,7 +4,18 @@
     src: url('sweety.otf') format('opentype'),
          url('sweety.ttf') format('truetype');
 }
-
+@font-face {
+    font-family: 'cream';
+    src: url('cream.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'highlight';
+    src: url('highlight.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'chic';
+    src: url('chic.ttf') format('truetype');
+}
 
 /******** Styles globaux ****************/
 
@@ -33,6 +44,46 @@ a {
     outline: 0;         /*retire déco séléction(Tab)*/
 }
 
+.sweety {
+    font-family: "sweety";
+}
+.cream {
+    font-family: 'cream';
+}
+.cream div *:nth-child(1), .cream_2 {
+	background: linear-gradient(120deg, #0023db, #0887fb);
+	-webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+.cream div *:nth-child(2) {
+    color: #0887fb;
+}
+.highlight {
+    font-family: 'highlight'; 
+}
+.highlight div *:nth-child(1), .highlight_2 {
+	background: linear-gradient(120deg, #3e923a, #beff7f);
+	-webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+.highlight div *:nth-child(2) {
+    color: #72bf56 ;
+}
+.chic {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+.chic div *:nth-child(1), .chic_2 {
+	background: linear-gradient(120deg, #c77412, #8f5aff);
+	-webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+.chic div *:nth-child(2) {
+    color: #c77412;
+}
+.margin {
+    margin: 0;
+}
 
 /******** HEADER ************************/
 header {
@@ -64,6 +115,7 @@ main .a_block {
     flex-wrap: nowrap;
     width: 80%;
     margin: auto;
+
 }
 
 main .a_block_1 {
@@ -71,8 +123,38 @@ main .a_block_1 {
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
+    height: 100%;
+    font-size: 2em;
 }
 
+main  .a_block  a {
+    box-shadow: 0px 0px 20px 5px #CCC;
+    width: 45%;         /* image étirable sans deformer*/
+    overflow: hidden;   /* cache le dépassement animation zoom*/
+    display: flex;
+    justify-content: center;
+}
+
+main  .a_block  a  .overflow {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 35% 4% 35% 4%; /**/
+}
+
+main  .a_block  a  .overflow * {
+    border: 1px solid;
+    margin: 10px;
+}
+
+main  .a_block  a  .overflow .note *:first-child{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+}
 main .a_block_separation {
     height: 50px;
 }
@@ -82,19 +164,12 @@ main .a_block_2 {
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
+    font-size: 3em;
 }
 
-
-main  .a_block  a {
-    display: flex;      /*a englobe img */
-    box-shadow: 0px 0px 20px 5px #CCC;
-    width: 45%;         /* image étirable sans deformer*/
-    overflow: hidden;   /* cache le dépassement animation zoom*/
+main .a_block_2 a .overflow {
+    padding: 45% 0 45% 0; /**/
 }
-main  .a_block  a  img {
-    width: 100%;        /*100% de a*/
-}
-
 
 /********* PROCHAINEMENT ***********/
 
@@ -141,13 +216,28 @@ main .menu .margin_menu .logo_note {      /* logos */
     display: flex;
     justify-content: center;
 }
-main .menu .margin_menu .logo_note div {
+main .menu .margin_menu .logo_note:last-child div{
     display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+main .menu .margin_menu .logo_note:last-child div *:last-child{
+    width: 100%;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+main .menu .margin_menu .logo_note div {
+    text-align: center;
     max-width: 22em;
+}
+main .menu .margin_menu .logo_note div *{
+    margin: 0;
 }
 
 main .menu .margin_menu .logo_note div img {
-    width: 100%;
+    width: 50%;
 }
 
 main .menu .margin_menu .title {           /*div(h2+div(img))*/
@@ -245,12 +335,12 @@ footer  div  a:nth-child(2) {
 
 
 /* Zoom et opacité sur les menus */
-main  .a_block  a  img {
+main  .a_block  a  .overflow {
     transition-property: transform, opacity;
     transition-duration: 500ms;    
 }
-main  .a_block  a  img:hover {
-    transform: scale(1.2);
+main  .a_block  a .overflow:hover {
+    transform: scale(1.1);
     opacity: 0.5;
 }
 
@@ -411,6 +501,14 @@ h2::before {
     main .a_block, main .menu {
         width: 90%;               
     }
+
+    main  .a_block  a  .overflow {
+        padding: 15% 4% 15% 4%; /**/
+    }
+
+    main .a_block_2 a .overflow {
+    padding: 30% 4% 30% 4%; /**/
+}
     
     main  .p_block  p {
         min-width: 300px;           
@@ -460,10 +558,16 @@ h2::before {
         justify-content: stretch;    
     }
     
+    
     main  .a_block  a {
         border: 1px solid #DDD;   
         width: 100%;                
         margin-top: 20px;           
+    }
+
+    main  .a_block_1  a:nth-child(2) .overflow{
+        padding: 35% 4% 35% 4%; /**/
+        border: 1px solid;;
     }
 
     main  .p_block {
