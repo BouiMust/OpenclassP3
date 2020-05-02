@@ -619,7 +619,7 @@ h2::before {
         font-size: 2.5em;
     }
     main .menu .margin_menu .logo_note div img {            /*page menu*/
-        width: 60px;
+        max-width: 60px;
     }
     main .menu .margin_menu .title {           /*page menu*/
         flex-direction: column;
