@@ -145,7 +145,6 @@ main  .a_block  a  .overflow {
 }
 
 main  .a_block  a  .overflow * {
-    border: 1px solid;
     margin: 10px;
 }
 
@@ -276,8 +275,8 @@ main .menu .margin_menu .espace {
     height: 30px;
 }
 
-.verdana {
-    font-family: normal;
+.times {
+    font-family: 'Times New Roman', Times, serif;
 }
 .title_size {
     font-size: 1.3em;
@@ -565,9 +564,16 @@ h2::before {
         margin-top: 20px;           
     }
 
+
+
     main  .a_block_1  a:nth-child(2) .overflow{
         padding: 35% 4% 35% 4%; /**/
-        border: 1px solid;;
+        font-size: 0.8em;
+    }
+
+    main  .a_block_2  a:nth-child(1) .overflow{
+        padding: 30% 4% 30% 4%; /**/
+        font-size: 0.8em;
     }
 
     main  .p_block {
@@ -595,7 +601,9 @@ h2::before {
     }
     main .menu .margin_menu {            /*page menu*/
         margin: 30px;
+        font-size: 0.8em;
     }
+    
     main .menu .margin_menu .title {           /*page menu*/
         flex-direction: column;
         align-items: stretch;
@@ -603,5 +611,9 @@ h2::before {
     }
     main .menu .margin_menu .title *:nth-child(2) {   /*h2*/
         min-width: auto;
+    }
+
+    main .menu .margin_menu .espace:first-child {
+        height: 0;
     }
 }
